@@ -1,0 +1,7 @@
+p = @images_with_all_tags
+- for image in @images_with_all_tags
+  .img
+  p= image.description
+  ul
+    - for tag in image.tags
+      li = tag.name

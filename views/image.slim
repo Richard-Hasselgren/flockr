@@ -1,0 +1,19 @@
+-if flash[:error]
+  ul
+    -for error in flash[:error]
+      li= error
+
+.img
+p= @image.description
+p Rating: #{@image.ratings.avg(:value).round(2)}
+
+form action="/rate/image/#{@image.id}" method='post'
+  /input type='number' name='rating'
+  select name='rating'
+    option value='1' 1
+    option value='2' 2
+    option value='3' 3
+    option value='4' 4
+    option value='5' 5
+
+  button type='submit' R8!
